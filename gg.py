@@ -13,9 +13,6 @@ class MathGameWithCustomBackground:
         self.root.config(bg="#eb9bae")  # สีชมพูอ่อน
         self.root.resizable(True, True)
 
-       
-       
-    
         # ตั้งค่าเกม
         self.score = 0
         self.num_questions = 0
