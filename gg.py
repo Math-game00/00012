@@ -12,8 +12,20 @@ class MathGameWithCustomBackground:
         self.root.geometry("800x600")
         self.root.config(bg="#eb9bae")  # สีชมพูอ่อน
         self.root.resizable(True, True)
-
         # ตั้งค่าเกม
+        self.start_bg_image = Image.open("math.jpg")  # ภาพเริ่มต้น
+       
+        self.start_bg_photo = None
+        self.game_bg_photo = None
+
+        # สร้าง Canvas
+        self.canvas = tk.Canvas(root, width=800, height=600)
+        self.canvas.pack(fill="both", expand=True)
+
+        # ใส่พื้นหลังภาพเริ่มต้น
+        self.start_bg_photo = ImageTk.PhotoImage(self.start_bg_image.resize((1600, 850), Image.Resampling.LANCZOS))
+        self.bg_item = self.canvas.create_image(0, 0, anchor="nw", image=self.start_bg_photo)
+
         self.score = 0
         self.num_questions = 0
         self.total_questions = 10
